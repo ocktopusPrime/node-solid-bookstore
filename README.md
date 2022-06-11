@@ -1,6 +1,6 @@
 # 2203 Green Team
 
-David Sowers Jared Long
+David Sowers, Jared Long, Timothy Davis
 
 ## Getting started
 
