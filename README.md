@@ -1,8 +1,7 @@
 # 2203 Green
 
-# David Sowers
-
-# Jared Long
+David Sowers
+Jared Long
 
 ## Getting started
 
