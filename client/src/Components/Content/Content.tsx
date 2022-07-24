@@ -1,5 +1,5 @@
 import { createSignal, onMount, For } from 'solid-js';
-import { mongo } from '../../App';
+import { baseUrl } from '../../App';
 import { Book } from '../../api/Book';
 
 import './Content.scss';
@@ -8,7 +8,7 @@ export const Content = () => {
 	const [books, setBooks] = createSignal([] as Book[]);
 
 	onMount(async () => {
-		const res = await fetch(`${mongo}/api/books`);
+		const res = await fetch(`${baseUrl}/api/books`);
 		setBooks(await res.json());
 	});
 	return (

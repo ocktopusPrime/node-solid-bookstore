@@ -4,7 +4,7 @@ import { Bookstore } from './Components/Bookstore';
 
 import './App.scss';
 
-export const mongo =
+export const baseUrl =
 	process.env.NODE_ENV === 'production'
 		? 'https://bookstore-green-team.herokuapp.com'
 		: 'http://localhost:5000';
