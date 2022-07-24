@@ -7,7 +7,7 @@ import './App.scss';
 export const mongo =
 	process.env.NODE_ENV === 'production'
 		? 'https://bookstore-green-team.herokuapp.com/'
-		: 'http://localhost:27017';
+		: 'http://localhost:3000';
 
 const App: Component = () => {
 	return (

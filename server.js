@@ -15,9 +15,10 @@ app.use(express.json());
 
 // Configure Mongo
 const db =
-	process.env.NODE_ENV === 'production'
-		? process.env.DBCONNECTION
-		: 'mongodb://localhost/bookstore';
+	'mongodb+srv://netninja:test1234@bookstore.9oo0klt.mongodb.net/?retryWrites=true&w=majority';
+// process.env.NODE_ENV === 'production'
+// 	? process.env.DBCONNECTION
+// 	: 'mongodb://localhost/bookstore';
 
 // Connect to Mongo with Mongoose
 mongoose
