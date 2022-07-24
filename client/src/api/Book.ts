@@ -1,3 +1,4 @@
+// Add inventory, price, year, user rating
 export interface Book {
 	_id?: string;
 	title: string;

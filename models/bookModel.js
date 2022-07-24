@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+// Add inventory, price, year, user rating
 const bookSchema = new Schema({
 	title: { type: String, require: true },
 	author: { type: String, required: true },
