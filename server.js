@@ -23,8 +23,6 @@ const db =
 // Connect to Mongo with Mongoose
 mongoose
 	.connect(db, {
-		user: process.env.DB_USER,
-		pass: process.env.DB_PASS,
 		useNewUrlParser: true,
 		useUnifiedTopology: true
 	})
