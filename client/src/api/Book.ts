@@ -1,11 +1,10 @@
-// Add inventory, price, year, user rating
 export interface Book {
-	title: string;
-	author: string;
+	Name: string;
+	Author: string;
 	coverArtUrl: string;
 	ISBN: number;
-	quantity: number;
-	price: number;
+	Quantity: number;
+	price: string;
 	year: number;
 	description?: string;
 	pageLength?: number;
