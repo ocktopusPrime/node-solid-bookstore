@@ -3,7 +3,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
-const setupPassport = require('./setupPassport');
+// const setupPassport = require('./setupPassport');
+const Book = require('./models/bookModel');
 
 // Setup express app
 const app = express();
@@ -15,10 +16,9 @@ app.use(express.json());
 
 // Configure Mongo
 const db =
-	'mongodb+srv://netninja:test1234@bookstore.9oo0klt.mongodb.net/?retryWrites=true&w=majority';
-// process.env.NODE_ENV === 'production'
-// 	? process.env.DBCONNECTION
-// 	: 'mongodb://localhost/bookstore';
+	process.env.NODE_ENV === 'production'
+		? process.env.DBCONNECTION
+		: 'mongodb://localhost/bookstore';
 
 // Connect to Mongo with Mongoose
 mongoose
@@ -31,18 +31,25 @@ mongoose
 	.then(() => console.log('MongoDB connected'))
 	.catch((err) => console.log('Error connecting to MongoDB', err));
 
-setupPassport();
+// setupPassport();
 
 // Specify the Port where the backend server can be accessed and start listening on that port
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server up and running on port ${port}.`));
 
 // inital route to get all the book inventory
-const inventoryRouter = require('./routes/getInventory');
-const setuppassport = require('./setupPassport');
+// const setuppassport = require('./setupPassport');
 // add future routes here
 
-app.use('/inventory', inventoryRouter);
+app.get('/api/books', async (req, res) => {
+	try {
+		const books = await Book.find({});
+		if (res === []) return res.json({ msg: 'No books in database.' });
+		res.json(books);
+	} catch (error) {
+		res.status(500).json({ msg: error });
+	}
+});
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/dist'));
