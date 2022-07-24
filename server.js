@@ -43,7 +43,7 @@ app.listen(port, () => console.log(`Server up and running on port ${port}.`));
 
 app.get('/api/books', async (req, res) => {
 	try {
-		const books = await Books.find({});
+		const books = await Book.find({});
 		console.error(books);
 		if (books.length === 0) return res.json({ msg: 'No books in database.' });
 		res.json(books);
