@@ -2,14 +2,14 @@ const router = require('express').Router();
 const inventory = require('../models/bookModel');
 
 // Getting list of all the books from the inventory
-router.route('/api/books').get((req, res) => {
+router.route('api/books').get((req, res) => {
 	Book.find()
 		.then((book) => res.json(book))
 		.catch((err) => res.status(400).json('Error: ' + err));
 });
 
 // Adding book to inventory
-router.route('/api/book').post((req, res) => {
+router.route('api/book').post((req, res) => {
 	const author = req.body.username;
 	const description = req.body.description;
 	const pageLength = Number(req.body.duration);
@@ -29,21 +29,21 @@ router.route('/api/book').post((req, res) => {
 });
 
 // Find book by id
-router.route('/api/book/:id').get((req, res) => {
+router.route('api/book/:id').get((req, res) => {
 	Book.findById(req.params.id)
 		.then((book) => res.json(book))
 		.catch((err) => res.status(400).json('Error: ' + err));
 });
 
 // Delete book by id
-router.route('/api/book/:id').delete((req, res) => {
+router.route('api/book/:id').delete((req, res) => {
 	Book.findByIdAndDelete(req.params.id)
 		.then(() => res.json('Book deleted.'))
 		.catch((err) => res.status(400).json('Error: ' + err));
 });
 
 // Update book by id
-router.route('/api/:id').post((req, res) => {
+router.route('api/:id').post((req, res) => {
 	Book.findById(req.params.id)
 		.then((book) => {
 			book.author = req.body.author;
