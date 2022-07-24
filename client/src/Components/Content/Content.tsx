@@ -18,7 +18,8 @@ export const Content = () => {
 					<figure>
 						<img src={book.coverArtUrl} alt={book.Name} />
 						<figcaption>
-							{book.Name} <br /> {book.Author || 'Unknown'} <br /> {book.description}
+							{book.Name || 'Unknown title'} <br /> {book.Author || 'Unknown author'}{' '}
+							<br /> {book.description || 'No description'}
 						</figcaption>
 					</figure>
 				)}
