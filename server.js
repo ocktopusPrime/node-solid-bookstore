@@ -43,6 +43,7 @@ app.get('/api/books', async (req, res) => {
 	console.log(db);
 	try {
 		const books = await Book.find({});
+		console.log(books);
 		if (books.length === 0) return res.json({ msg: 'No books in database.' });
 		res.json(books);
 	} catch (error) {
