@@ -1,0 +1,16 @@
+#navlist {
+	list-style: none;
+	display: flex;
+	white-space: nowrap;
+	align-items: center;
+	margin: auto;
+
+	li {
+		margin-left: 15px;
+		width: 80px;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}
