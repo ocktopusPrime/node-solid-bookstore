@@ -1,4 +1,4 @@
-#book-items {
+#books {
 	position: relative;
 	background-color: rgb(213, 224, 197);
 	height: 1080px;
@@ -13,4 +13,12 @@
 .book-image {
 	width: 250px;
 	height: 400px;
+}
+
+.book-item {
+	width: 275px;
+
+	figcaption {
+		overflow: auto;
+	}
 }

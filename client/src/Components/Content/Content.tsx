@@ -12,10 +12,10 @@ export const Content = () => {
 		setBooks(await res.json());
 	});
 	return (
-		<div id='book-items'>
+		<div id='books'>
 			<For each={books()} fallback={<p>Loading...</p>}>
 				{(book) => (
-					<figure>
+					<figure class='book-item'>
 						<img class='book-image' src={book.coverArtUrl} alt={book.Name} />
 						<figcaption>
 							{book.Name || 'Unknown title'} <br /> {book.Author || 'Unknown author'}{' '}
