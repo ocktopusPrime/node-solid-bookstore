@@ -7,7 +7,6 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	flex-direction: column;
 }
 
 .book-image {
@@ -17,6 +16,7 @@
 
 .book-item {
 	width: 275px;
+	height: 600px;
 
 	figcaption {
 		overflow: auto;
