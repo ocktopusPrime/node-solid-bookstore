@@ -4,4 +4,13 @@
 	height: 1080px;
 	padding: 20px;
 	overflow: auto;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.book-image {
+	width: 250px;
+	height: 400px;
 }

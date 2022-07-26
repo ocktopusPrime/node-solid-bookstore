@@ -16,7 +16,7 @@ export const Content = () => {
 			<For each={books()} fallback={<p>Loading...</p>}>
 				{(book) => (
 					<figure>
-						<img src={book.coverArtUrl} alt={book.Name} />
+						<img class='book-image' src={book.coverArtUrl} alt={book.Name} />
 						<figcaption>
 							{book.Name || 'Unknown title'} <br /> {book.Author || 'Unknown author'}{' '}
 							<br /> {book.description || 'No description'}
