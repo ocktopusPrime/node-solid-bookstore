@@ -25,7 +25,7 @@ export const Content = () => {
 
 						<figcaption>
 							{book.Name || 'Unknown title'} <br />
-							{book.Author || 'Unknown author'} <br /> {book.Quantity || 0}
+							{book.Author || 'Unknown author'} <br /> {book.quantity || 0}
 						</figcaption>
 					</figure>
 				)}
