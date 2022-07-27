@@ -1,0 +1,24 @@
+#books {
+	position: relative;
+	background-color: rgb(213, 224, 197);
+	height: 1080px;
+	padding: 20px;
+	overflow: auto;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.book-image {
+	width: 250px;
+	height: 400px;
+}
+
+.book-item {
+	width: 275px;
+	height: 600px;
+
+	figcaption {
+		overflow: auto;
+	}
+}

@@ -1,7 +1,7 @@
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
-var User = require('./models/user');
+const User = require('./models/user');
 
 module.exports = function () {
 	//turns a user object into an id
@@ -17,10 +17,10 @@ module.exports = function () {
 	});
 
 	passport.use(
-		'login',
+		'Login',
 		new LocalStrategy(
 			{
-				usernameField: 'email',
+				usernameField: 'username',
 				passwordField: 'password'
 			},
 			function (email, password, done) {
