@@ -1,7 +1,12 @@
+import { Button } from 'solid-bootstrap';
+import { TiShoppingCart } from 'solid-icons/ti';
+
 export const Register = () => {
 	return (
 		<div>
-			<p>New User registration form</p>
+				<Button variant="success">Register
+				
+			</Button>
 		</div>
 	);
 };
