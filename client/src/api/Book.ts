@@ -3,7 +3,7 @@ export interface Book {
 	Author: string;
 	coverArtUrl: string;
 	ISBN: number;
-	Quantity: number;
+	quantity: number;
 	price: string;
 	year: number;
 	description?: string;

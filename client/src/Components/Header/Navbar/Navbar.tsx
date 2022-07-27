@@ -5,7 +5,7 @@ export const Navbar = () => {
 	return (
 		<ul id='navlist'>
 			<li>
-				<Link href='/'>Home</Link>
+				<Link href='/'>Collection</Link>
 			</li>
 			<li>
 				<Link href='/blog'>Blog</Link>
