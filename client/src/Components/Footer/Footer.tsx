@@ -1,6 +1,6 @@
 import './Footer.scss';
 import { Toast } from 'solid-bootstrap'
-
+import { CloseButton } from 'solid-bootstrap'
 
 export const Footer = () => {
 	return (
@@ -10,6 +10,7 @@ export const Footer = () => {
   
   
 ].map((variant, idx) => (
+  
   <Toast class="d-inline-block m-2" bg={variant.toLowerCase()}>
     <Toast.Header>
       <img

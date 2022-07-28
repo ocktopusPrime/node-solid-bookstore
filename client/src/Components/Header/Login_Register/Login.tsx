@@ -8,8 +8,10 @@ export const Login = () => {
 	const handleOpen = () => setShow(true);
 	const handleClose = () => setShow(false);
 	const handleLogin = () => alert('Congrats on logging in!');
+	
 
 	return (
+		
 		<>
 			<Button id='login-btn' variant='primary' onClick={handleOpen}>
 				Login
@@ -50,6 +52,8 @@ export const Login = () => {
 					</Button>
 				</Modal.Footer>
 			</Modal>
+			
 		</>
+		
 	);
 };
