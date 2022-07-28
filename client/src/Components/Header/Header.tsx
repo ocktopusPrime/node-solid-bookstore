@@ -10,10 +10,16 @@ export const Header = () => {
 			<div id='header-links'>
 				<Navbar />
 			</div>
-			<div id="headers"><h1><span style="background-color: green">Olaf's Rare Bookstore</span></h1></div>
+
+			<div id='application-title'>
+				<h1>
+					<span style='background-color: green'>Olaf's Rare Bookstore</span>
+				</h1>
+			</div>
+
 			<div id='header-buttons'>
 				<Login />
-				<Register/>
+				<Register />
 				<ShoppingCart />
 			</div>
 		</div>

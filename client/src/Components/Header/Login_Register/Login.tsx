@@ -1,46 +1,55 @@
-import { Button } from 'solid-bootstrap';
-import { Form, InputGroup } from "solid-bootstrap";
-import { Popover } from 'solid-bootstrap'
-import { OverlayTrigger } from 'solid-bootstrap'
+import { Button, Modal } from 'solid-bootstrap';
+import { Form } from 'solid-bootstrap';
+import { createSignal } from 'solid-js';
+import '../Header.scss';
 
 export const Login = () => {
+	const [show, setShow] = createSignal(false);
+	const handleOpen = () => setShow(true);
+	const handleClose = () => setShow(false);
+	const handleLogin = () => alert('Congrats on logging in!');
+
 	return (
-		
-<OverlayTrigger
-  trigger="click"
-  offset={[0, 8]}
-  placement="right"
-  overlay={
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">Employee Login</Popover.Header>
-      <Popover.Body>
-	  <Form>
-  <Form.Group class="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text class="text-muted">
-    </Form.Text>
-  </Form.Group>
+		<>
+			<Button id='login-btn' variant='primary' onClick={handleOpen}>
+				Login
+			</Button>
 
-  <Form.Group class="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="username" placeholder="Username" />
-  </Form.Group>
+			<Modal
+				show={show()}
+				onHide={handleClose}
+				size='sm'
+				aria-labelledby='contained-modal-title-vcenter'
+				centered
+			>
+				<Modal.Header>
+					<Modal.Title id='contained-modal-title-vcenter'>User Login</Modal.Title>
+				</Modal.Header>
 
-  <Form.Group class="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
+				<Modal.Body>
+					<Form>
+						<Form.Group class='mb-3' controlId='formBasicEmail'>
+							<Form.Label>Email address</Form.Label>
+							<Form.Control type='email' placeholder='Enter email' />
+							<Form.Text class='text-muted'></Form.Text>
+						</Form.Group>
 
+						<Form.Group class='mb-3' controlId='formBasicPassword'>
+							<Form.Label>Password</Form.Label>
+							<Form.Control type='password' placeholder='Password' />
+						</Form.Group>
+					</Form>
+				</Modal.Body>
 
-  <Button variant="primary" type="submit">Login</Button>
-</Form>
-      </Popover.Body>
-    </Popover>
-  }
->
-  <Button variant="primary">Login</Button>
-</OverlayTrigger>
+				<Modal.Footer>
+					<Button onClick={handleClose} variant='secondary'>
+						Close
+					</Button>
+					<Button onClick={handleLogin} variant='primary' type='submit'>
+						Submit
+					</Button>
+				</Modal.Footer>
+			</Modal>
+		</>
 	);
 };
-

@@ -1,50 +1,55 @@
-import { Button } from 'solid-bootstrap';
-import { Form, InputGroup } from "solid-bootstrap";
-import { Popover } from 'solid-bootstrap'
-import { OverlayTrigger } from 'solid-bootstrap'
+import { Button, Modal } from 'solid-bootstrap';
+import { Form } from 'solid-bootstrap';
+import { OverlayTrigger } from 'solid-bootstrap';
+import { createSignal } from 'solid-js';
 
 export const Register = () => {
+	const [show, setShow] = createSignal(false);
+	const handleOpen = () => setShow(true);
+	const handleClose = () => setShow(false);
+	const handleLogin = () => alert('Congrats on signing up!');
+
 	return (
-		
-<OverlayTrigger
-  trigger="click"
-  offset={[0, 8]}
-  placement="right"
-  overlay={
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">New Employee Registration</Popover.Header>
-      <Popover.Body>
-	  <Form>
-  <Form.Group class="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Please Provide Valid Email" />
-    <Form.Text class="text-muted">      
-    </Form.Text>
-  </Form.Group>
+		<>
+			<Button id='register-button' variant='success' onClick={handleOpen}>
+				Register
+			</Button>
 
-  <Form.Group class="mb-3" controlId="formStrongPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="username" placeholder="Username" />
-	<div class="alert alert-info" role="alert">
-     
-    </div>
-  </Form.Group>
+			<Modal
+				show={show()}
+				onHide={handleClose}
+				size='sm'
+				aria-labelledby='contained-modal-title-vcenter'
+				centered
+			>
+				<Modal.Header>
+					<Modal.Title>New User Registration</Modal.Title>
+				</Modal.Header>
 
-  <Form.Group class="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
+				<Modal.Body>
+					<Form>
+						<Form.Group class='mb-3' controlId='formBasicEmail'>
+							<Form.Label>Email address</Form.Label>
+							<Form.Control type='email' placeholder='Please Provide Valid Email' />
+							<Form.Text class='text-muted'></Form.Text>
+						</Form.Group>
 
+						<Form.Group class='mb-3' controlId='formStrongPassword'>
+							<Form.Label>Password</Form.Label>
+							<Form.Control type='password' placeholder='Password' />
+						</Form.Group>
+					</Form>
+				</Modal.Body>
 
-  <Button variant="primary" type="submit">SignUp</Button>
-</Form>
-      </Popover.Body>
-    </Popover>
-  }
->
-  <Button variant="success">Register</Button>
-</OverlayTrigger>
-
-		
+				<Modal.Footer>
+					<Button onClick={handleClose} variant='secondary'>
+						Close
+					</Button>
+					<Button onClick={handleLogin} variant='primary' type='submit'>
+						Submit
+					</Button>
+				</Modal.Footer>
+			</Modal>
+		</>
 	);
 };
